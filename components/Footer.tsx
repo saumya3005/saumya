@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { RiGithubLine, RiLinkedinLine, RiArrowUpLine } from 'react-icons/ri';
+import { RiGithubLine, RiLinkedinLine, RiInstagramLine, RiArrowUpLine } from 'react-icons/ri';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
@@ -62,7 +62,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-2">
               <motion.a
-                href="https://github.com/saumya1st"
+                href="https://github.com/saumya3005"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -73,7 +73,7 @@ export default function Footer() {
                 <RiGithubLine size={18} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/saumyaagrahari"
+                href="https://www.linkedin.com/in/saumya-agrahari-924900347"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -82,6 +82,17 @@ export default function Footer() {
                 className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-zinc-500 hover:text-blue-400 hover:border-blue-400/30 transition-all duration-300"
               >
                 <RiLinkedinLine size={18} />
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/saumyaagrahari._"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-zinc-500 hover:text-pink-400 hover:border-pink-400/30 transition-all duration-300"
+              >
+                <RiInstagramLine size={18} />
               </motion.a>
             </div>
           </div>

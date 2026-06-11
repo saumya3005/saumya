@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { RiArrowRightUpLine, RiGithubLine, RiLinkedinLine, RiInstagramLine, RiMailLine } from 'react-icons/ri';
+import { RiArrowRightUpLine, RiGithubLine, RiLinkedinLine, RiInstagramLine, RiMailLine, RiDownloadLine } from 'react-icons/ri';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import DynamicName from './DynamicName';
@@ -128,22 +128,31 @@ export default function Hero() {
             I build modern, interactive and intelligent web experiences using AI, full-stack development, and creative UI design.
           </motion.p>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center gap-6"
-          >
-            <a href="#projects" className="group relative inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 rounded-full font-semibold transition-transform hover:scale-105">
-              <span className="flex items-center gap-2">
-                View Projects <RiArrowRightUpLine className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </span>
-            </a>
-            
-            <a href="#contact" className="group relative inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full border border-zinc-700 transition-all hover:border-yellow-400 hover:text-yellow-400">
-              <span>Contact Me</span>
-            </a>
-          </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-wrap items-center gap-4"
+            >
+              <a href="#projects" className="group relative inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 rounded-full font-semibold transition-transform hover:scale-105">
+                <span className="flex items-center gap-2">
+                  View Projects <RiArrowRightUpLine className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </span>
+              </a>
+              
+              <a href="#contact" className="group relative inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-full border border-zinc-700 transition-all hover:border-yellow-400 hover:text-yellow-400">
+                <span>Contact Me</span>
+              </a>
+
+              <a
+                href="/Saumya_Agrahari_Resume.pdf"
+                download
+                className="group relative inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full glass-panel border border-white/10 text-zinc-300 font-medium transition-all duration-300 hover:border-yellow-400/40 hover:text-yellow-400 hover:shadow-[0_0_25px_rgba(250,204,21,0.15)] hover:scale-[1.03]"
+              >
+                <RiDownloadLine size={18} className="group-hover:-translate-y-0.5 transition-transform" />
+                Resume
+              </a>
+            </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -151,10 +160,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex items-center gap-6 mt-12 text-zinc-500"
           >
-            <a href="https://github.com/saumya1st" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:-translate-y-1 transition-all"><RiGithubLine size={24} /></a>
-            <a href="https://linkedin.com/in/saumyaagrahari" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 hover:-translate-y-1 transition-all"><RiLinkedinLine size={24} /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 hover:-translate-y-1 transition-all"><RiInstagramLine size={24} /></a>
-            <a href="mailto:saumya.agrahari1@gmail.com" className="hover:text-yellow-400 hover:-translate-y-1 transition-all"><RiMailLine size={24} /></a>
+            <a href="https://github.com/saumya3005" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:-translate-y-1 transition-all"><RiGithubLine size={24} /></a>
+            <a href="https://www.linkedin.com/in/saumya-agrahari-924900347" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 hover:-translate-y-1 transition-all"><RiLinkedinLine size={24} /></a>
+            <a href="https://www.instagram.com/saumyaagrahari._" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 hover:-translate-y-1 transition-all"><RiInstagramLine size={24} /></a>
+            <a href="mailto:saumyaagrahari262730@gmail.com" className="hover:text-yellow-400 hover:-translate-y-1 transition-all"><RiMailLine size={24} /></a>
           </motion.div>
         </div>
 

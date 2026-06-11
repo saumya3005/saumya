@@ -9,24 +9,26 @@ import {
   RiMailLine,
   RiWhatsappLine,
   RiArrowRightUpLine,
+  RiDownloadLine,
+  RiMapPinLine,
 } from 'react-icons/ri';
 
 const SOCIALS = [
   {
     icon: <RiGithubLine size={20} />,
-    href: "https://github.com/saumya1st",
+    href: "https://github.com/saumya3005",
     label: "GitHub",
     hoverClass: "hover:border-white/30 hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]",
   },
   {
     icon: <RiLinkedinLine size={20} />,
-    href: "https://linkedin.com/in/saumyaagrahari",
+    href: "https://www.linkedin.com/in/saumya-agrahari-924900347",
     label: "LinkedIn",
     hoverClass: "hover:border-blue-400/40 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(96,165,250,0.2)]",
   },
   {
     icon: <RiInstagramLine size={20} />,
-    href: "#",
+    href: "https://www.instagram.com/saumyaagrahari._",
     label: "Instagram",
     hoverClass: "hover:border-pink-400/40 hover:text-pink-400 hover:shadow-[0_0_20px_rgba(244,114,182,0.2)]",
   },
@@ -44,7 +46,6 @@ export default function ContactSection() {
   const yShift = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -52,8 +53,14 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: wire to Formspree / EmailJS endpoint
-    setSubmitted(true);
+    const { name, email, message } = formState;
+
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    window.open(`mailto:asaumya25@gmail.com?subject=${subject}&body=${body}`, '_self');
   };
 
   return (
@@ -117,81 +124,69 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            {submitted ? (
-              <div className="glass-panel rounded-3xl p-10 flex flex-col items-center justify-center text-center h-full min-h-90 border border-yellow-400/20">
-                <div className="w-16 h-16 rounded-full bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 mb-6 text-2xl">
-                  ✓
-                </div>
-                <h3 className="text-2xl font-bold tracking-tighter text-white mb-2">Message Sent!</h3>
-                <p className="text-zinc-400 font-light">
-                  Thanks for reaching out. I&apos;ll get back to you within 24 hours.
-                </p>
+            <form
+              onSubmit={handleSubmit}
+              className="glass-panel rounded-3xl p-8 sm:p-10 border border-white/5 flex flex-col gap-5"
+            >
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-name" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                  Name *
+                </label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Your full name"
+                  value={formState.name}
+                  onChange={handleChange}
+                  className="form-input"
+                />
               </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="glass-panel rounded-3xl p-8 sm:p-10 border border-white/5 flex flex-col gap-5"
+
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-email" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                  Email *
+                </label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  value={formState.email}
+                  onChange={handleChange}
+                  className="form-input"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-message" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                  Message *
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows={5}
+                  required
+                  placeholder="Tell me about your project..."
+                  value={formState.message}
+                  onChange={handleChange}
+                  className="form-input resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="group relative mt-2 flex items-center justify-center gap-3 px-8 py-4 bg-yellow-500 text-zinc-950 rounded-full font-semibold text-base overflow-hidden transition-all duration-300 hover:bg-yellow-400 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(250,204,21,0.35)] active:scale-95"
               >
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="contact-name" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
-                    Name
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    required
-                    placeholder="Your full name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    className="form-input"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="contact-email" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
-                    Email
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    value={formState.email}
-                    onChange={handleChange}
-                    className="form-input"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="contact-message" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
-                    Message
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows={5}
-                    required
-                    placeholder="Tell me about your project..."
-                    value={formState.message}
-                    onChange={handleChange}
-                    className="form-input resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="group relative mt-2 flex items-center justify-center gap-3 px-8 py-4 bg-yellow-500 text-zinc-950 rounded-full font-semibold text-base overflow-hidden transition-all duration-300 hover:bg-yellow-400 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(250,204,21,0.35)] active:scale-95"
-                >
-                  <span>Send Message</span>
-                  <RiArrowRightUpLine
-                    size={20}
-                    className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                  />
-                </button>
-              </form>
-            )}
+                <span>Send Message</span>
+                <RiArrowRightUpLine
+                  size={20}
+                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                />
+              </button>
+            </form>
           </motion.div>
 
           {/* RIGHT — Info & Social Links */}
@@ -200,10 +195,10 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col justify-between gap-12"
+            className="flex flex-col justify-between gap-10"
           >
             {/* Direct Contact */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">
                 Direct Contact
               </h3>
@@ -218,20 +213,38 @@ export default function ContactSection() {
                 <span className="text-sm sm:text-base font-light">saumyaagrahari262730@gmail.com</span>
               </a>
 
+              {/* Location */}
+              <div className="flex items-center gap-4 text-zinc-400">
+                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-500">
+                  <RiMapPinLine size={18} />
+                </div>
+                <span className="text-sm sm:text-base font-light">Prayagraj, Uttar Pradesh, India</span>
+              </div>
+
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/91XXXXXXXXXX"
+                href="https://wa.me/918318286501"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 px-6 py-3 rounded-full border border-green-500/30 text-green-400 text-sm font-medium transition-all duration-300 hover:bg-green-500/10 hover:border-green-400/50 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:scale-[1.02] w-fit"
               >
                 <RiWhatsappLine size={20} className="group-hover:scale-110 transition-transform" />
-                Chat on WhatsApp
+                Message on WhatsApp
+              </a>
+
+              {/* Resume Download */}
+              <a
+                href="/Saumya_Agrahari_Resume.pdf"
+                download
+                className="group inline-flex items-center gap-3 px-6 py-3 rounded-full glass-panel border border-white/10 text-zinc-300 text-sm font-medium transition-all duration-300 hover:border-yellow-400/40 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)] hover:scale-[1.02] w-fit"
+              >
+                <RiDownloadLine size={18} className="group-hover:-translate-y-0.5 transition-transform" />
+                Download Resume
               </a>
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">
                 Find Me Online
               </h3>
