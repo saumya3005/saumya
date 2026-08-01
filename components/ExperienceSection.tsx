@@ -1,36 +1,79 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import SectionWrapper from './SectionWrapper';
-import SpotlightCard from './SpotlightCard';
-import { fadeUp } from '@/lib/motion';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import { RiBriefcase4Line, RiCodeBoxLine, RiRocketLine, RiArrowRightSLine } from 'react-icons/ri';
 
 const EXPERIENCE_DATA = [
   {
-    role: "Full Stack Engineer Intern",
-    company: "TuteDude",
-    date: "Dec 2024 - Present",
-    desc: "Developing and optimizing core backend infrastructure, user-facing UI components, and API routing. Improving system performance and state management across the application stack.",
+    role: "Backend Development Intern",
+    company: "Prodesk IT, Noida",
+    date: "Aug 2025 - Present",
+    desc: "Engineered 10+ REST API endpoints in Python/Django for R&D production applications, improving data retrieval by 25% via query optimization and indexing strategies.",
+    techStack: ["Python", "Django", "MySQL", "Pytest", "Agile/Scrum"],
+    impact: "Reduced backend response time by 30% through scalable database workflows.",
+    achievements: [
+      "Engineered 10+ REST API endpoints.",
+      "Achieved 85%+ test coverage with Pytest.",
+      "Collaborated in Agile team of 6+ engineers across 3 production releases."
+    ],
+    icon: <RiBriefcase4Line size={24} />,
+    colorClass: "text-accent-purple",
+    bgClass: "bg-accent-purple/10",
   },
   {
-    role: "Open Source Contributor",
-    company: "GirlScript Summer of Code",
-    date: "Oct 2024 - Nov 2024",
-    desc: "Authored and merged substantial pull requests solving issues across multiple open-source repositories. Engineered algorithms and improved web UI accessibility standards.",
+    role: "Web Developer Intern",
+    company: "Code Resite, Prayagraj",
+    date: "Jun 2025 - Jul 2025",
+    desc: "Delivered full-stack features across 5+ client projects using React.js, JavaScript, Node.js, and REST APIs. Deployed all projects on Vercel with CI/CD pipelines.",
+    techStack: ["React.js", "Node.js", "JavaScript", "REST APIs", "Vercel"],
+    impact: "Improved page load performance by 35% through frontend optimization.",
+    achievements: [
+      "Delivered features across 5+ client projects.",
+      "Reduced UI bugs by 40% via systematic testing.",
+      "Optimized lazy loading, code splitting, and caching."
+    ],
+    icon: <RiCodeBoxLine size={24} />,
+    colorClass: "text-accent-blue",
+    bgClass: "bg-accent-blue/10",
   },
   {
     role: "Full Stack Development Intern",
-    company: "IBM SkillsBuild",
-    date: "Jun 2024 - Jul 2024",
-    desc: "Designed and implemented scalable web architectures. Developed REST APIs and connected dynamic front-end interfaces to robust backend databases.",
+    company: "CodeAlpha",
+    date: "Jun 2026 - Jul 2026",
+    desc: "Developed responsive full-stack web applications using React.js, HTML5, CSS3, and REST API integration as part of the Full Stack Development Internship Program.",
+    techStack: ["React.js", "JavaScript", "HTML5", "CSS3", "Git"],
+    impact: "Maintained source code using Git/GitHub in an Agile development environment.",
+    achievements: [
+      "Implemented authentication and CRUD operations.",
+      "Built reusable UI components and responsive layouts.",
+      "Successfully completed all assigned development tasks."
+    ],
+    icon: <RiRocketLine size={24} />,
+    colorClass: "text-accent-cyan",
+    bgClass: "bg-accent-cyan/10",
+  },
+  {
+    role: "Freelance Full Stack Developer",
+    company: "Hanuman Pushpavarsha Committee",
+    date: "Jan 2024 - Mar 2025",
+    desc: "Built bilingual (Hindi-English) production website serving 500+ users. Integrated Razorpay payment gateway, live streaming, member registry, and admin dashboard.",
+    techStack: ["Next.js", "Firebase", "Firestore", "Razorpay", "Vercel"],
+    impact: "Reduced admin overhead by 60% by automating member registration.",
+    achievements: [
+      "Developed 6 production modules including live streaming.",
+      "Automated member registration via Firestore.",
+      "Implemented Firebase Auth with role-based access control (RBAC)."
+    ],
+    icon: <RiCodeBoxLine size={24} />,
+    colorClass: "text-emerald-400",
+    bgClass: "bg-emerald-500/10",
   },
 ];
 
 export default function ExperienceSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Progress bar logic
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
@@ -42,91 +85,170 @@ export default function ExperienceSection() {
     restDelta: 0.001
   });
 
-  const yShift = useTransform(scrollYProgress, [0, 1], [100, -100]);
-
   return (
-    <SectionWrapper id="experience" className="py-20 sm:py-40 bg-[#F8F1FC] text-[#1F1726] relative z-10 border-t border-[#DDC6E6]/30">
-      <motion.div style={{ y: yShift }} className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 relative z-10" ref={containerRef}>
+    <section id="experience" className="py-24 sm:py-32 relative z-10 border-t border-white/5 overflow-hidden">
+      
+      {/* Background Decorators */}
+      <div className="absolute top-0 right-0 w-200 h-200 bg-accent-purple/5 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-150 h-150 bg-accent-cyan/5 blur-[100px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3" />
+
+      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10" ref={containerRef}>
         
-        {/* Section Header */}
         <div className="mb-24 text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 0.6, y: 0 }}
+            whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#5D4A68]"
+            className="text-sm font-mono tracking-[0.2em] uppercase text-accent-blue"
           >
-            02 / Timeline
+            04 // Timeline
           </motion.span>
           <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-light tracking-tight mt-2"
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mt-4"
           >
-            Professional Experience
+            Professional <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-purple to-accent-cyan">Experience</span>
           </motion.h2>
         </div>
 
-        {/* Timeline Container */}
         <div className="relative">
-          {/* Lavender Timeline Track */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-[#DDC6E6] to-transparent md:-translate-x-1/2 opacity-50" />
+          {/* Main vertical line background */}
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2" />
           
-          {/* Animated Progress Line */}
+          {/* Animated vertical line progress */}
           <motion.div 
             style={{ scaleY, originY: 0 }}
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-[#BB8ECD] to-[#D0B1DD] md:-translate-x-1/2 shadow-[0_0_15px_rgba(187,142,205,0.5)] rounded-full z-10"
+            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-accent-purple via-accent-cyan to-accent-blue md:-translate-x-1/2 shadow-[0_0_15px_rgba(124,58,237,0.5)] z-10"
           />
 
-          {EXPERIENCE_DATA.map((exp, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 50, x: isEven ? -50 : 50, rotateY: isEven ? 10 : -10 }}
-                whileInView={{ opacity: 1, y: 0, x: 0, rotateY: 0 }}
-                viewport={{ once: true, margin: "-15%" }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative flex items-center mb-16 md:mb-24 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} w-full group cursor-hover-target transform-3d perspective-1000`}
-              >
-                
-                {/* Timeline Dot */}
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#FBF7FF] border-2 border-[#BB8ECD] md:-translate-x-1/2 z-20 group-hover:scale-150 group-hover:bg-[#BB8ECD] transition-all duration-500 shadow-[0_0_10px_rgba(187,142,205,0.4)]" 
-                />
-
-                {/* Content Card */}
-                <div className={`pl-12 md:pl-0 w-full md:w-1/2 ${isEven ? 'md:pr-16 lg:pr-24' : 'md:pl-16 lg:pl-24'}`}>
-                  <SpotlightCard 
-                    glowColor="rgba(208, 177, 221, 0.15)"
-                    className="p-6 sm:p-8 rounded-4xl border border-[#DDC6E6]/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(208,177,221,0.08)] transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_20px_50px_rgba(208,177,221,0.15)] group-hover:border-[#BB8ECD]/50 hover:rotate-1"
-                  >
-                    <span className="inline-block px-3 py-1 text-xs font-mono rounded-full bg-[#F3E7FA] text-[#5D4A68] border border-[#DDC6E6]/50 mb-4 transition-colors group-hover:bg-[#BB8ECD]/10">
-                      {exp.date}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-medium text-[#1F1726] mb-1">
-                      {exp.role}
-                    </h3>
-                    <h4 className="text-[#BB8ECD] font-medium mb-4 tracking-wide text-sm sm:text-base">
-                      {exp.company}
-                    </h4>
-                    <p className="text-[#5D4A68] leading-relaxed font-light text-sm sm:text-base">
-                      {exp.desc}
-                    </p>
-                  </SpotlightCard>
-                </div>
-                
-              </motion.div>
-            );
-          })}
+          <div className="space-y-16 md:space-y-24">
+            {EXPERIENCE_DATA.map((exp, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <ExperienceCard key={index} exp={exp} index={index} isEven={isEven} />
+              );
+            })}
+          </div>
         </div>
 
+      </div>
+    </section>
+  );
+}
+
+function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0], index: number, isEven: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 50, x: isEven ? -20 : 20 }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={`relative flex items-start md:items-center flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} w-full group`}
+    >
+      
+      {/* Timeline Dot */}
+      <motion.div 
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="absolute left-6 md:left-1/2 w-8 h-8 rounded-full glass-panel border-2 border-zinc-800 -translate-x-3.75 md:-translate-x-1/2 z-20 group-hover:border-accent-cyan transition-colors duration-500 shadow-xl flex items-center justify-center overflow-hidden" 
+      >
+        <div className="absolute inset-0 bg-accent-cyan/20 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
+        <div className="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-accent-cyan transition-colors duration-500 relative z-10" />
       </motion.div>
-    </SectionWrapper>
+
+      {/* Empty Space for Grid Layout */}
+      <div className={`hidden md:block w-1/2 ${isEven ? 'pr-12 lg:pr-16' : 'pl-12 lg:pl-16'}`} />
+
+      {/* Content Card */}
+      <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${isEven ? 'md:pl-12 lg:pl-16' : 'md:pr-12 lg:pr-16'}`}>
+        <div 
+          onClick={() => setExpanded(!expanded)}
+          className={`p-6 sm:p-8 rounded-3xl glass-panel border border-white/5 transition-all duration-500 hover:border-white/10 hover:bg-zinc-900/60 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] cursor-pointer relative overflow-hidden`}
+        >
+          {/* Subtle Accent Glow */}
+          <div className={`absolute top-0 right-0 w-32 h-32 ${exp.bgClass} rounded-full blur-[50px] pointer-events-none transition-opacity duration-500 ${expanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+
+          <div className="flex items-start justify-between gap-4 mb-4 relative z-10">
+            <div className={`w-12 h-12 rounded-xl glass-panel flex items-center justify-center ${exp.colorClass} shadow-inner bg-black/20 group-hover:scale-110 transition-transform duration-500`}>
+              {exp.icon}
+            </div>
+            <span className="inline-block px-3 py-1 text-xs font-mono rounded-full bg-white/5 text-zinc-400 border border-white/5">
+              {exp.date}
+            </span>
+          </div>
+
+          <div className="relative z-10">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-zinc-400 transition-all">
+              {exp.role}
+            </h3>
+            <h4 className={`${exp.colorClass} font-medium mb-4 tracking-wide text-sm sm:text-base`}>
+              {exp.company}
+            </h4>
+            
+            <p className="text-zinc-400 leading-relaxed font-light text-sm sm:text-base mb-6">
+              {exp.desc}
+            </p>
+
+            {/* Expandable Content */}
+            <AnimatePresence initial={false}>
+              {expanded && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden border-t border-white/10 pt-4 mt-2 space-y-4"
+                >
+                  
+                  <div>
+                    <h5 className="text-xs font-mono uppercase text-zinc-500 mb-2">Impact</h5>
+                    <p className="text-sm text-zinc-300 font-light">{exp.impact}</p>
+                  </div>
+
+                  <div>
+                    <h5 className="text-xs font-mono uppercase text-zinc-500 mb-2">Key Achievements</h5>
+                    <ul className="space-y-2">
+                      {exp.achievements.map((ach, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-zinc-300 font-light">
+                          <RiArrowRightSLine className={`${exp.colorClass} mt-0.5 shrink-0`} />
+                          <span>{ach}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h5 className="text-xs font-mono uppercase text-zinc-500 mb-2 mt-4">Tech Stack</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.techStack.map((tech, i) => (
+                        <span key={i} className="px-2.5 py-1 text-xs font-mono rounded-md bg-black/40 border border-white/5 text-zinc-400">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Expand indicator */}
+            <div className="mt-4 flex items-center justify-center border-t border-white/5 pt-4">
+              <span className="text-[10px] uppercase font-mono tracking-widest text-zinc-600 group-hover:text-zinc-400 transition-colors flex items-center gap-2">
+                {expanded ? 'Collapse Details' : 'Expand Details'}
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+    </motion.div>
   );
 }

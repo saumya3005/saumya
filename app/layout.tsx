@@ -41,7 +41,10 @@ export const metadata: Metadata = {
 };
 
 import SmoothScrolling from '@/components/SmoothScrolling';
-
+import CursorFollower from '@/components/CursorFollower';
+import BackgroundCanvas from '@/components/BackgroundCanvas';
+import CommandMenu from '@/components/CommandMenu';
+import AiAssistantPanel from '@/components/AiAssistantPanel';
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +53,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-zinc-950 text-white selection:bg-yellow-500/30 selection:text-white">
+        <BackgroundCanvas />
+        <CursorFollower />
+        <CommandMenu />
+        <AiAssistantPanel />
         <SmoothScrolling>
           {children}
         </SmoothScrolling>
