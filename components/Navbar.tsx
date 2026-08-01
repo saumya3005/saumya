@@ -53,7 +53,7 @@ export default function Navbar() {
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'py-4 glass-panel border-b border-white/5' 
+            ? 'py-4 glass-panel border-b border-accent-copper/20' 
             : 'py-6 bg-transparent'
         }`}
       >
@@ -68,7 +68,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <button
                   onClick={() => scrollTo(link.href)}
-                  className="relative text-sm font-medium tracking-wide text-zinc-300 hover:text-yellow-400 transition-colors duration-300 group"
+                  className="relative text-sm font-medium tracking-wide text-ivory hover:text-yellow-400 transition-colors duration-300 group"
                 >
                   {link.label}
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
@@ -78,7 +78,7 @@ export default function Navbar() {
           </ul>
 
           <button 
-            className="md:hidden text-zinc-300 hover:text-yellow-400 transition-colors p-2"
+            className="md:hidden text-ivory hover:text-yellow-400 transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <RiCloseLine size={28} /> : <RiMenuLine size={28} />}
@@ -94,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 bg-zinc-950/95 backdrop-blur-xl flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-luxury-bg/95 backdrop-blur-xl flex flex-col items-center justify-center"
           >
             <div className="flex flex-col items-center gap-8">
               {NAV_LINKS.map((link, i) => (

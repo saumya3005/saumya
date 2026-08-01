@@ -13,9 +13,9 @@ const RESEARCH_DATA = [
     desc: "ML-based IDS on CIC UNSW-NB15 (175,000+ records); benchmarked 4 models (Decision Tree, Random Forest, Logistic Regression, XGBoost); 93.78% accuracy with Precision, Recall, F1, ROC-AUC. Selected for international conference presentation.",
     link: "#",
     icon: <RiArticleLine size={24} />,
-    colorClass: "text-accent-purple",
-    bgClass: "bg-accent-purple/10",
-    borderClass: "border-accent-purple/50",
+    colorClass: "text-accent-copper",
+    bgClass: "bg-accent-copper/10",
+    borderClass: "border-accent-copper/50",
   }
 ];
 
@@ -40,9 +40,9 @@ const HACKATHON_DATA = [
     desc: "Developed an AI-powered solution recognized by Google Developer Group ecosystem judges for innovation and practical impact.",
     participants: "GDG",
     icon: <RiTrophyLine size={24} />,
-    colorClass: "text-accent-cyan",
-    bgClass: "bg-accent-cyan/10",
-    borderClass: "border-accent-cyan/50",
+    colorClass: "text-accent-bronze",
+    bgClass: "bg-accent-bronze/10",
+    borderClass: "border-accent-bronze/50",
   },
   {
     title: "NSUT National Hackathon",
@@ -77,10 +77,10 @@ export default function ResearchHackathonSection() {
   const y2 = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="research-hackathons" className="py-24 sm:py-32 relative z-10 border-t border-white/5 bg-zinc-950 overflow-hidden">
+    <section id="research-hackathons" className="py-24 sm:py-32 relative z-10 border-t border-accent-copper/20 bg-luxury-bg overflow-hidden">
       
       {/* Dynamic Backgrounds */}
-      <div className="absolute top-1/4 -left-1/4 w-200 h-200 bg-accent-purple/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 -left-1/4 w-200 h-200 bg-accent-copper/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 -right-1/4 w-200 h-200 bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={containerRef}>
@@ -91,7 +91,7 @@ export default function ResearchHackathonSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-mono tracking-[0.2em] uppercase text-zinc-500"
+            className="text-sm font-mono tracking-[0.2em] uppercase text-secondary-text"
           >
             05 // Academics & Competitions
           </motion.span>
@@ -102,7 +102,7 @@ export default function ResearchHackathonSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mt-4"
           >
-            Research & <span className="text-transparent bg-clip-text bg-linear-to-r from-yellow-500 to-accent-cyan">Wins</span>
+            Research & <span className="text-transparent bg-clip-text bg-linear-to-r from-yellow-500 to-accent-bronze">Wins</span>
           </motion.h2>
         </div>
 
@@ -124,13 +124,13 @@ export default function ResearchHackathonSection() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="group relative"
               >
-                <div className={`p-8 rounded-3xl glass-panel border border-white/5 bg-linear-to-b ${item.bgClass} transition-all duration-500 hover:${item.borderClass} hover:shadow-2xl hover:shadow-${item.colorClass.replace('text-', '')}/20 overflow-hidden`}>
+                <div className={`p-8 rounded-3xl glass-panel border border-accent-copper/20 bg-linear-to-b ${item.bgClass} transition-all duration-500 hover:${item.borderClass} hover:shadow-2xl hover:shadow-${item.colorClass.replace('text-', '')}/20 overflow-hidden`}>
                   
                   {/* Hover Orb */}
                   <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-2xl pointer-events-none" style={{ background: 'currentColor' }} />
 
                   <div className="relative z-10 flex flex-col items-start gap-4">
-                    <div className={`w-12 h-12 rounded-xl glass-panel border border-white/10 flex items-center justify-center ${item.colorClass} shadow-inner`}>
+                    <div className={`w-12 h-12 rounded-xl glass-panel border border-accent-copper/25 flex items-center justify-center ${item.colorClass} shadow-inner`}>
                       {item.icon}
                     </div>
                     
@@ -141,10 +141,10 @@ export default function ResearchHackathonSection() {
                       <h4 className="text-xl sm:text-2xl font-bold text-zinc-100 mb-2 leading-snug">
                         {item.title}
                       </h4>
-                      <p className="text-sm font-medium text-zinc-300 mb-4 flex items-center gap-2">
+                      <p className="text-sm font-medium text-ivory mb-4 flex items-center gap-2">
                         {item.publisher}
                       </p>
-                      <p className="text-zinc-400 font-light leading-relaxed mb-6">
+                      <p className="text-secondary-text font-light leading-relaxed mb-6">
                         {item.desc}
                       </p>
                     </div>
@@ -174,33 +174,33 @@ export default function ResearchHackathonSection() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="group relative"
               >
-                <div className={`p-8 rounded-3xl glass-panel border border-white/5 bg-linear-to-b ${item.bgClass} transition-all duration-500 hover:${item.borderClass} hover:shadow-2xl hover:shadow-${item.colorClass.replace('text-', '')}/20 overflow-hidden`}>
+                <div className={`p-8 rounded-3xl glass-panel border border-accent-copper/20 bg-linear-to-b ${item.bgClass} transition-all duration-500 hover:${item.borderClass} hover:shadow-2xl hover:shadow-${item.colorClass.replace('text-', '')}/20 overflow-hidden`}>
                   
                   {/* Hover Orb */}
                   <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-2xl pointer-events-none" style={{ background: 'currentColor' }} />
 
                   <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
                     
-                    <div className={`w-14 h-14 shrink-0 rounded-2xl glass-panel border border-white/10 flex items-center justify-center ${item.colorClass} shadow-inner group-hover:scale-110 transition-transform duration-500`}>
+                    <div className={`w-14 h-14 shrink-0 rounded-2xl glass-panel border border-accent-copper/25 flex items-center justify-center ${item.colorClass} shadow-inner group-hover:scale-110 transition-transform duration-500`}>
                       {item.icon}
                     </div>
                     
                     <div>
                       <div className="flex flex-wrap items-center gap-3 mb-2">
-                        <span className={`px-3 py-1 text-xs font-bold rounded-full ${item.bgClass.replace('/10', '/30')} ${item.colorClass} border border-white/5`}>
+                        <span className={`px-3 py-1 text-xs font-bold rounded-full ${item.bgClass.replace('/10', '/30')} ${item.colorClass} border border-accent-copper/20`}>
                           {item.position}
                         </span>
-                        <span className="text-xs text-zinc-500 font-mono">{item.date}</span>
+                        <span className="text-xs text-secondary-text font-mono">{item.date}</span>
                       </div>
                       
                       <h4 className="text-lg font-bold text-zinc-100 mb-1">
                         {item.title}
                       </h4>
-                      <div className="text-sm font-medium text-zinc-400 mb-3">
+                      <div className="text-sm font-medium text-secondary-text mb-3">
                         {item.project} • {item.participants}
                       </div>
                       
-                      <p className="text-zinc-400 font-light text-sm leading-relaxed">
+                      <p className="text-secondary-text font-light text-sm leading-relaxed">
                         {item.desc}
                       </p>
                     </div>

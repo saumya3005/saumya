@@ -58,10 +58,10 @@ export default function CommandMenu() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-xl overflow-hidden rounded-2xl glass-panel border border-white/10 shadow-2xl flex flex-col max-h-[80vh]"
+              className="relative w-full max-w-xl overflow-hidden rounded-2xl glass-panel border border-accent-copper/25 shadow-2xl flex flex-col max-h-[80vh]"
             >
-              <div className="flex items-center px-4 py-4 border-b border-white/10 gap-3">
-                <RiSearchLine className="text-zinc-400" size={20} />
+              <div className="flex items-center px-4 py-4 border-b border-accent-copper/25 gap-3">
+                <RiSearchLine className="text-secondary-text" size={20} />
                 <input
                   type="text"
                   placeholder="Type a command or search..."
@@ -72,7 +72,7 @@ export default function CommandMenu() {
                 />
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="p-1 rounded-md hover:bg-white/10 text-zinc-400 transition-colors cursor-none magnetic-target"
+                  className="p-1 rounded-md hover:bg-white/10 text-secondary-text transition-colors cursor-none magnetic-target"
                 >
                   <RiCloseLine size={20} />
                 </button>
@@ -80,13 +80,13 @@ export default function CommandMenu() {
 
               <div className="overflow-y-auto p-4 flex-1 custom-scrollbar">
                 {sections.length === 0 ? (
-                  <div className="text-center py-8 text-zinc-500 font-mono text-sm">
+                  <div className="text-center py-8 text-secondary-text font-mono text-sm">
                     No results found.
                   </div>
                 ) : (
                   sections.map((section) => (
                     <div key={section} className="mb-6 last:mb-0">
-                      <div className="px-2 text-xs font-mono uppercase text-zinc-500 tracking-wider mb-2">
+                      <div className="px-2 text-xs font-mono uppercase text-secondary-text tracking-wider mb-2">
                         {section}
                       </div>
                       <div className="flex flex-col gap-1">
@@ -99,9 +99,9 @@ export default function CommandMenu() {
                                 cmd.action();
                                 setIsOpen(false);
                               }}
-                              className="w-full text-left flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/10 text-zinc-300 hover:text-white transition-colors cursor-none magnetic-target group"
+                              className="w-full text-left flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/10 text-ivory hover:text-white transition-colors cursor-none magnetic-target group"
                             >
-                              <div className="text-accent-purple group-hover:text-accent-cyan transition-colors">
+                              <div className="text-accent-copper group-hover:text-accent-bronze transition-colors">
                                 {cmd.icon}
                               </div>
                               <span className="font-medium text-sm">{cmd.title}</span>
@@ -113,14 +113,14 @@ export default function CommandMenu() {
                 )}
               </div>
 
-              <div className="px-4 py-3 border-t border-white/10 bg-black/20 flex items-center justify-between text-xs font-mono text-zinc-500">
+              <div className="px-4 py-3 border-t border-accent-copper/25 bg-black/20 flex items-center justify-between text-xs font-mono text-secondary-text">
                 <div className="flex items-center gap-2">
                   <span>Navigate</span>
-                  <span className="px-1.5 py-0.5 rounded-md bg-white/10 border border-white/5">↑↓</span>
+                  <span className="px-1.5 py-0.5 rounded-md bg-white/10 border border-accent-copper/20">↑↓</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>Select</span>
-                  <span className="px-1.5 py-0.5 rounded-md bg-white/10 border border-white/5">Enter</span>
+                  <span className="px-1.5 py-0.5 rounded-md bg-white/10 border border-accent-copper/20">Enter</span>
                 </div>
               </div>
 

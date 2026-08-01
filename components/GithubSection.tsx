@@ -45,7 +45,7 @@ export default function GithubSection() {
   }, []);
 
   return (
-    <section id="github" className="py-24 sm:py-32 relative z-10 border-t border-white/5 bg-zinc-950 overflow-hidden">
+    <section id="github" className="py-24 sm:py-32 relative z-10 border-t border-accent-copper/20 bg-luxury-bg overflow-hidden">
       
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-zinc-800/10 via-zinc-950 to-zinc-950 pointer-events-none" />
 
@@ -57,7 +57,7 @@ export default function GithubSection() {
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 text-white border border-white/10"
+            className="w-16 h-16 rounded-full glass-panel flex items-center justify-center mb-6 text-white border border-accent-copper/25"
           >
             <RiGithubFill size={36} />
           </motion.div>
@@ -66,7 +66,7 @@ export default function GithubSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-mono tracking-[0.2em] uppercase text-zinc-500"
+            className="text-sm font-mono tracking-[0.2em] uppercase text-secondary-text"
           >
             07 // Open Source
           </motion.span>
@@ -77,7 +77,7 @@ export default function GithubSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mt-4"
           >
-            GitHub <span className="text-zinc-500">Activity</span>
+            GitHub <span className="text-secondary-text">Activity</span>
           </motion.h2>
         </div>
 
@@ -91,8 +91,8 @@ export default function GithubSection() {
               { label: "Followers", value: stats.followers || "50+", icon: <RiStarLine size={20} /> },
               { label: "Lines of Code", value: "500k+", icon: <RiCodeLine size={20} /> }
             ].map((stat, idx) => (
-              <div key={idx} className="p-6 rounded-2xl glass-panel border border-white/5 flex flex-col items-center text-center group hover:border-white/20 transition-colors">
-                <div className="text-zinc-500 mb-3 group-hover:text-white transition-colors">{stat.icon}</div>
+              <div key={idx} className="p-6 rounded-2xl glass-panel border border-accent-copper/20 flex flex-col items-center text-center group hover:border-white/20 transition-colors">
+                <div className="text-secondary-text mb-3 group-hover:text-white transition-colors">{stat.icon}</div>
                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-xs font-mono uppercase tracking-widest text-zinc-600">{stat.label}</div>
               </div>
@@ -100,9 +100,9 @@ export default function GithubSection() {
           </div>
 
           {/* Contributions Graph */}
-          <div className="p-8 rounded-3xl glass-panel border border-white/5 overflow-hidden relative group">
+          <div className="p-8 rounded-3xl glass-panel border border-accent-copper/20 overflow-hidden relative group">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <RiGitCommitLine className="text-accent-purple" /> Contribution Graph
+              <RiGitCommitLine className="text-accent-copper" /> Contribution Graph
             </h3>
             <div className="w-full overflow-x-auto hide-scrollbar pb-4">
               {/* GHChart API renders an SVG of the contribution graph */}
@@ -113,16 +113,16 @@ export default function GithubSection() {
               />
             </div>
             {/* Overlay to blend the image perfectly into the dark theme */}
-            <div className="absolute inset-0 bg-zinc-950/20 pointer-events-none" />
+            <div className="absolute inset-0 bg-luxury-bg/20 pointer-events-none" />
           </div>
 
           {/* Live Recent Repos */}
           <div>
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-xl font-bold flex items-center gap-2">
-                <RiGitRepositoryLine className="text-accent-cyan" /> Recent Activity
+                <RiGitRepositoryLine className="text-accent-bronze" /> Recent Activity
               </h3>
-              <a href="https://github.com/saumya3005" target="_blank" rel="noreferrer" className="text-sm font-mono text-zinc-500 hover:text-white transition-colors">
+              <a href="https://github.com/saumya3005" target="_blank" rel="noreferrer" className="text-sm font-mono text-secondary-text hover:text-white transition-colors">
                 View All Repos →
               </a>
             </div>
@@ -130,7 +130,7 @@ export default function GithubSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {loading ? (
                 [1, 2, 3, 4].map(i => (
-                  <div key={i} className="h-32 rounded-2xl glass-panel border border-white/5 animate-pulse bg-white/5" />
+                  <div key={i} className="h-32 rounded-2xl glass-panel border border-accent-copper/20 animate-pulse bg-white/5" />
                 ))
               ) : (
                 repos.map((repo) => (
@@ -139,22 +139,22 @@ export default function GithubSection() {
                     href={repo.html_url}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-6 rounded-2xl glass-panel border border-white/5 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col h-full"
+                    className="p-6 rounded-2xl glass-panel border border-accent-copper/20 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col h-full"
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="text-lg font-bold text-white group-hover:text-accent-cyan transition-colors truncate pr-4">
+                      <h4 className="text-lg font-bold text-white group-hover:text-accent-bronze transition-colors truncate pr-4">
                         {repo.name}
                       </h4>
-                      <div className="flex items-center gap-1 text-zinc-500 text-sm">
+                      <div className="flex items-center gap-1 text-secondary-text text-sm">
                         <RiStarLine /> {repo.stargazers_count}
                       </div>
                     </div>
-                    <p className="text-sm text-zinc-400 mb-4 line-clamp-2 font-light flex-1">
+                    <p className="text-sm text-secondary-text mb-4 line-clamp-2 font-light flex-1">
                       {repo.description || "No description provided."}
                     </p>
-                    <div className="flex items-center justify-between text-xs font-mono text-zinc-600 mt-auto pt-4 border-t border-white/5">
+                    <div className="flex items-center justify-between text-xs font-mono text-zinc-600 mt-auto pt-4 border-t border-accent-copper/20">
                       <span className="flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-accent-cyan" />
+                        <span className="w-2 h-2 rounded-full bg-accent-bronze" />
                         {repo.language || "Markdown"}
                       </span>
                       <span>Updated {new Date(repo.updated_at).toLocaleDateString()}</span>

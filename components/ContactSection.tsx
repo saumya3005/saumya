@@ -67,7 +67,7 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-24 sm:py-36 bg-zinc-950 text-white border-t border-white/5 overflow-hidden"
+      className="relative py-24 sm:py-36 bg-luxury-bg text-white border-t border-accent-copper/20 overflow-hidden"
     >
       {/* Large background "CONNECT" text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -109,7 +109,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-zinc-400 font-light text-lg max-w-md"
+            className="mt-4 text-secondary-text font-light text-lg max-w-md"
           >
             Open for roles, freelance projects, and exciting collaborations. Drop a message and I&apos;ll get back to you soon.
           </motion.p>
@@ -126,10 +126,10 @@ export default function ContactSection() {
           >
             <form
               onSubmit={handleSubmit}
-              className="glass-panel rounded-3xl p-8 sm:p-10 border border-white/5 flex flex-col gap-5"
+              className="glass-panel rounded-3xl p-8 sm:p-10 border border-accent-copper/20 flex flex-col gap-5"
             >
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="contact-name" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                <label htmlFor="contact-name" className="text-xs font-mono uppercase tracking-widest text-secondary-text">
                   Name *
                 </label>
                 <input
@@ -145,7 +145,7 @@ export default function ContactSection() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="contact-email" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                <label htmlFor="contact-email" className="text-xs font-mono uppercase tracking-widest text-secondary-text">
                   Email *
                 </label>
                 <input
@@ -161,7 +161,7 @@ export default function ContactSection() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="contact-message" className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                <label htmlFor="contact-message" className="text-xs font-mono uppercase tracking-widest text-secondary-text">
                   Message *
                 </label>
                 <textarea
@@ -199,23 +199,23 @@ export default function ContactSection() {
           >
             {/* Direct Contact */}
             <div className="flex flex-col gap-5">
-              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">
+              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-secondary-text">
                 Direct Contact
               </h3>
 
               <a
                 href="mailto:saumyaagrahari262730@gmail.com"
-                className="group flex items-center gap-4 text-zinc-300 hover:text-yellow-400 transition-colors duration-300"
+                className="group flex items-center gap-4 text-ivory hover:text-yellow-400 transition-colors duration-300"
               >
-                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 group-hover:border-yellow-400/30 group-hover:text-yellow-400 transition-all duration-300">
+                <div className="w-10 h-10 rounded-full border border-accent-copper/25 flex items-center justify-center text-secondary-text group-hover:border-yellow-400/30 group-hover:text-yellow-400 transition-all duration-300">
                   <RiMailLine size={18} />
                 </div>
                 <span className="text-sm sm:text-base font-light">saumyaagrahari262730@gmail.com</span>
               </a>
 
               {/* Location */}
-              <div className="flex items-center gap-4 text-zinc-400">
-                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-500">
+              <div className="flex items-center gap-4 text-secondary-text">
+                <div className="w-10 h-10 rounded-full border border-accent-copper/25 flex items-center justify-center text-secondary-text">
                   <RiMapPinLine size={18} />
                 </div>
                 <span className="text-sm sm:text-base font-light">Prayagraj, Uttar Pradesh, India</span>
@@ -236,7 +236,7 @@ export default function ContactSection() {
               <a
                 href="/Saumya_Agrahari_Resume.pdf"
                 download
-                className="group inline-flex items-center gap-3 px-6 py-3 rounded-full glass-panel border border-white/10 text-zinc-300 text-sm font-medium transition-all duration-300 hover:border-yellow-400/40 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)] hover:scale-[1.02] w-fit"
+                className="group inline-flex items-center gap-3 px-6 py-3 rounded-full glass-panel border border-accent-copper/25 text-ivory text-sm font-medium transition-all duration-300 hover:border-yellow-400/40 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)] hover:scale-[1.02] w-fit"
               >
                 <RiDownloadLine size={18} className="group-hover:-translate-y-0.5 transition-transform" />
                 Download Resume
@@ -245,7 +245,7 @@ export default function ContactSection() {
 
             {/* Social Links */}
             <div className="flex flex-col gap-5">
-              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">
+              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-secondary-text">
                 Find Me Online
               </h3>
               <div className="flex items-center gap-3 flex-wrap">
@@ -258,7 +258,7 @@ export default function ContactSection() {
                     aria-label={social.label}
                     whileHover={{ y: -4, scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-12 h-12 flex items-center justify-center rounded-full border border-white/10 text-zinc-500 transition-all duration-300 ${social.hoverClass}`}
+                    className={`w-12 h-12 flex items-center justify-center rounded-full border border-accent-copper/25 text-secondary-text transition-all duration-300 ${social.hoverClass}`}
                   >
                     {social.icon}
                   </motion.a>
@@ -270,11 +270,11 @@ export default function ContactSection() {
             </div>
 
             {/* Decorative stat */}
-            <div className="glass-panel rounded-2xl p-6 border border-white/5 group hover:border-yellow-400/20 transition-colors duration-300">
+            <div className="glass-panel rounded-2xl p-6 border border-accent-copper/20 group hover:border-yellow-400/20 transition-colors duration-300">
               <div className="text-4xl font-black tracking-tighter text-white mb-1">
                 &lt; 24h
               </div>
-              <div className="text-sm text-zinc-500 font-mono uppercase tracking-widest">
+              <div className="text-sm text-secondary-text font-mono uppercase tracking-widest">
                 Average Response Time
               </div>
             </div>

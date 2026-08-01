@@ -8,27 +8,27 @@ const ACHIEVEMENTS = [
   {
     title: "Hackathon Wins",
     icon: <RiTrophyLine size={28} />,
-    color: "from-accent-purple/20 to-transparent",
-    iconColor: "text-accent-purple",
-    borderColor: "group-hover:border-accent-purple/50",
+    color: "from-accent-copper/20 to-transparent",
+    iconColor: "text-accent-copper",
+    borderColor: "group-hover:border-accent-copper/50",
     metric: 3,
     suffix: ""
   },
   {
     title: "Participants Competed Against",
     icon: <RiSwordLine size={28} />,
-    color: "from-accent-blue/20 to-transparent",
-    iconColor: "text-accent-blue",
-    borderColor: "group-hover:border-accent-blue/50",
+    color: "from-accent-bronze/20 to-transparent",
+    iconColor: "text-accent-bronze",
+    borderColor: "group-hover:border-accent-bronze/50",
     metric: 500,
     suffix: "+"
   },
   {
     title: "ML Model Accuracy",
     icon: <RiFocus2Line size={28} />,
-    color: "from-accent-cyan/20 to-transparent",
-    iconColor: "text-accent-cyan",
-    borderColor: "group-hover:border-accent-cyan/50",
+    color: "from-accent-bronze/20 to-transparent",
+    iconColor: "text-accent-bronze",
+    borderColor: "group-hover:border-accent-bronze/50",
     metric: 93,
     suffix: ".78%"
   },
@@ -98,10 +98,10 @@ export default function AchievementsSection() {
   const yShift = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="achievements" className="py-24 sm:py-32 relative z-10 border-t border-white/5 overflow-hidden">
+    <section id="achievements" className="py-24 sm:py-32 relative z-10 border-t border-accent-copper/20 overflow-hidden">
       
       {/* Background Decorators */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-150 bg-accent-blue/5 blur-[150px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-150 bg-accent-bronze/5 blur-[150px] pointer-events-none rounded-full" />
       
       <motion.div ref={containerRef} style={{ y: yShift }} className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
@@ -110,7 +110,7 @@ export default function AchievementsSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-mono tracking-[0.2em] uppercase text-accent-blue"
+            className="text-sm font-mono tracking-[0.2em] uppercase text-accent-bronze"
           >
             02 // Milestones
           </motion.span>
@@ -121,7 +121,7 @@ export default function AchievementsSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mt-4"
           >
-            By The <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-blue to-accent-cyan">Numbers</span>
+            By The <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-bronze to-accent-bronze">Numbers</span>
           </motion.h2>
         </div>
 
@@ -136,7 +136,7 @@ export default function AchievementsSection() {
               whileHover={{ y: -8 }}
               className="group relative"
             >
-              <div className={`h-full p-8 rounded-3xl glass-panel border border-white/5 transition-all duration-500 bg-linear-to-b ${item.color} ${item.borderColor} overflow-hidden`}>
+              <div className={`h-full p-8 rounded-3xl glass-panel border border-accent-copper/20 transition-all duration-500 bg-linear-to-b ${item.color} ${item.borderColor} overflow-hidden`}>
                 
                 {/* Background glow on hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -153,7 +153,7 @@ export default function AchievementsSection() {
                     <span className={`text-4xl ml-1 ${item.iconColor}`}>{item.suffix}</span>
                   </div>
                   
-                  <h3 className="text-lg md:text-xl font-light text-zinc-400 tracking-wide uppercase group-hover:text-zinc-200 transition-colors">
+                  <h3 className="text-lg md:text-xl font-light text-secondary-text tracking-wide uppercase group-hover:text-zinc-200 transition-colors">
                     {item.title}
                   </h3>
                 </div>

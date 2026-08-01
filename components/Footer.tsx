@@ -30,10 +30,10 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="relative bg-zinc-950 border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-luxury-bg border-t border-accent-copper/20 overflow-hidden">
 
       {/* ── Marquee Strip ── */}
-      <div className="marquee-wrapper border-y border-white/5 bg-yellow-500/4 py-4 overflow-hidden cursor-default">
+      <div className="marquee-wrapper border-y border-accent-copper/20 bg-yellow-500/4 py-4 overflow-hidden cursor-default">
         <div className="flex whitespace-nowrap">
           {/* Duplicate text so the seamless loop works at any viewport width */}
           <span className="animate-marquee inline-flex gap-0 text-2xl sm:text-3xl font-black tracking-tight text-yellow-400/20 select-none">
@@ -57,7 +57,7 @@ export default function Footer() {
             >
               SAUMYA AGRAHARI
             </button>
-            <p className="text-zinc-500 text-sm font-light leading-relaxed max-w-55">
+            <p className="text-secondary-text text-sm font-light leading-relaxed max-w-55">
               Building modern, intelligent, and visually stunning digital experiences.
             </p>
             <div className="flex items-center gap-3 mt-2">
@@ -68,7 +68,7 @@ export default function Footer() {
                 aria-label="GitHub"
                 whileHover={{ y: -3, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-zinc-500 hover:text-white hover:border-white/30 transition-all duration-300"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-accent-copper/25 text-secondary-text hover:text-white hover:border-white/30 transition-all duration-300"
               >
                 <RiGithubLine size={18} />
               </motion.a>
@@ -79,7 +79,7 @@ export default function Footer() {
                 aria-label="LinkedIn"
                 whileHover={{ y: -3, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-zinc-500 hover:text-blue-400 hover:border-blue-400/30 transition-all duration-300"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-accent-copper/25 text-secondary-text hover:text-blue-400 hover:border-blue-400/30 transition-all duration-300"
               >
                 <RiLinkedinLine size={18} />
               </motion.a>
@@ -90,7 +90,7 @@ export default function Footer() {
                 aria-label="Instagram"
                 whileHover={{ y: -3, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-zinc-500 hover:text-pink-400 hover:border-pink-400/30 transition-all duration-300"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-accent-copper/25 text-secondary-text hover:text-pink-400 hover:border-pink-400/30 transition-all duration-300"
               >
                 <RiInstagramLine size={18} />
               </motion.a>
@@ -107,7 +107,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-300 text-sm"
+                    className="group flex items-center gap-2 text-secondary-text hover:text-white transition-colors duration-300 text-sm"
                   >
                     <span className="w-3 h-px bg-zinc-700 group-hover:w-5 group-hover:bg-yellow-400 transition-all duration-300" />
                     {link.label}
@@ -124,7 +124,7 @@ export default function Footer() {
             </span>
             <a
               href="mailto:saumyaagrahari262730@gmail.com"
-              className="group text-zinc-400 hover:text-yellow-400 transition-colors text-sm font-light break-all"
+              className="group text-secondary-text hover:text-yellow-400 transition-colors text-sm font-light break-all"
             >
               saumyaagrahari262730@gmail.com
             </a>
@@ -141,7 +141,7 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="border-t border-white/5">
+      <div className="border-t border-accent-copper/20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-zinc-600 text-xs font-mono">
             © {year} Saumya Agrahari. All rights reserved.
@@ -153,7 +153,7 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="group w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-zinc-600 hover:text-yellow-400 hover:border-yellow-400/30 transition-all duration-300 hover:-translate-y-1"
+              className="group w-9 h-9 flex items-center justify-center rounded-full border border-accent-copper/25 text-zinc-600 hover:text-yellow-400 hover:border-yellow-400/30 transition-all duration-300 hover:-translate-y-1"
             >
               <RiArrowUpLine size={16} />
             </button>

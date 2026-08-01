@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent-copper: #B87333;
+  --color-accent-bronze: #8C6239;
+  --color-luxury-bg: #0B0B0C;
+  --color-ivory: #F8F5F0;
+  --color-secondary-text: #CFC7BC;
+}
+
 :root {
-  --background: #050816;
-  --foreground: #ffffff;
-  --primary: #12122a; 
-  --secondary: #1a1a3a; 
-  --accent-purple: #7C3AED;
-  --accent-blue: #2563EB;
-  --accent-cyan: #06B6D4;
+  --background: #0B0B0C;
+  --foreground: #F8F5F0;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
@@ -32,12 +35,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(250, 204, 21, 0.3);
+  background: rgba(184, 115, 51, 0.3); /* Copper */
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(250, 204, 21, 0.5);
+  background: rgba(184, 115, 51, 0.5);
 }
 
 /* Floating Animation */
@@ -55,30 +58,30 @@ body {
   will-change: transform;
 }
 
-/* Glassmorphism utilities */
+/* Glassmorphism utilities - Luxury */
 .glass-panel {
-  background: rgba(24, 24, 27, 0.4);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(184, 115, 51, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .glass-panel-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel-hover:hover {
-  background: rgba(39, 39, 42, 0.5);
-  border-color: rgba(250, 204, 21, 0.2);
-  box-shadow: 0 10px 40px rgba(250, 204, 21, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(184, 115, 51, 0.5); /* Stronger Copper */
+  box-shadow: 0 10px 40px rgba(184, 115, 51, 0.15); /* Soft Copper Glow */
   transform: translateY(-4px);
 }
 
 /* Text Stroke for large background text */
 .text-stroke {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 1px rgba(184, 115, 51, 0.2); /* Subtle Copper */
 }
 
 /* Lenis smooth scrolling resets */
@@ -145,8 +148,8 @@ html.lenis, html.lenis body {
 
 /* ─── Glow pulse (contact social icons) ─── */
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 10px rgba(250, 204, 21, 0.2); }
-  50%       { box-shadow: 0 0 25px rgba(250, 204, 21, 0.5); }
+  0%, 100% { box-shadow: 0 0 10px rgba(184, 115, 51, 0.2); }
+  50%       { box-shadow: 0 0 25px rgba(184, 115, 51, 0.4); }
 }
 
 .animate-glow {
@@ -155,9 +158,9 @@ html.lenis, html.lenis body {
 
 /* ─── Form input focus ring ─── */
 .form-input {
-  background: rgba(24, 24, 27, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #fafafa;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(184, 115, 51, 0.15);
+  color: #F8F5F0;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
   width: 100%;
@@ -167,12 +170,13 @@ html.lenis, html.lenis body {
 }
 
 .form-input::placeholder {
-  color: rgba(161, 161, 170, 0.5);
+  color: #CFC7BC;
+  opacity: 0.5;
 }
 
 .form-input:focus {
-  border-color: rgba(250, 204, 21, 0.4);
-  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.08);
+  border-color: rgba(184, 115, 51, 0.5);
+  box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.15);
 }
 
 /* ─── Reduced motion ─── */

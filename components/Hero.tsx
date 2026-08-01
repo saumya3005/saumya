@@ -147,7 +147,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1, delay: 0.8, type: "spring" }}
-                className="text-transparent bg-clip-text bg-linear-to-r from-accent-purple via-white to-accent-cyan inline-block"
+                className="text-transparent bg-clip-text bg-linear-to-r from-accent-copper via-ivory to-accent-bronze inline-block"
               >
                 Saumya Agrahari
               </motion.div>
@@ -163,7 +163,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 exit={{ opacity: 0, y: -40, rotateX: 90 }}
                 transition={{ duration: 0.5, type: "spring", stiffness: 200, damping: 20 }}
-                className="text-2xl sm:text-4xl font-light text-accent-cyan absolute origin-center"
+                className="text-2xl sm:text-4xl font-light text-accent-bronze absolute origin-center"
               >
                 {ROLES[currentRole]}
               </motion.div>
@@ -176,12 +176,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1 }}
             className="mb-12"
           >
-            <p className="text-xl sm:text-2xl text-zinc-300 font-medium mb-4 flex items-center gap-3">
+            <p className="text-xl sm:text-2xl text-ivory font-medium mb-4 flex items-center gap-3">
               Taylor & Francis Group 
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-purple" /> 
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-copper" /> 
               3x Hackathon Winner
             </p>
-            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed font-light">
+            <p className="text-lg sm:text-xl text-secondary-text max-w-2xl leading-relaxed font-light">
               Final-year AI/ML engineer. Published researcher. 10+ production APIs. 93.78% ML accuracy. I ship software that works.
             </p>
           </motion.div>
@@ -192,7 +192,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-wrap items-center gap-6"
           >
-            <MagneticButton href="#projects" className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-full font-bold transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]">
+            <MagneticButton href="#projects" className="group relative inline-flex items-center justify-center px-8 py-4 bg-ivory text-black rounded-full font-bold transition-all hover:shadow-[0_0_40px_rgba(248,245,240,0.4)]">
               <span className="flex items-center gap-2">
                 Explore Work <RiArrowRightUpLine className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </span>
@@ -200,7 +200,7 @@ export default function Hero() {
             
             <MagneticButton
               href="/Assets/Saumyaresume2026updated.pdf"
-              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass-panel border border-white/10 text-foreground font-medium transition-all duration-300 hover:border-accent-purple/50 hover:text-accent-purple hover:shadow-[0_0_25px_rgba(124,58,237,0.2)]"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass-panel border border-accent-copper/25 text-ivory font-medium transition-all duration-300 hover:border-accent-copper/50 hover:text-accent-copper hover:shadow-[0_0_25px_rgba(184,115,51,0.2)]"
             >
               <RiDownloadLine size={20} className="group-hover:-translate-y-0.5 transition-transform" />
               Download Resume
@@ -222,14 +222,14 @@ export default function Hero() {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            className="relative w-75 h-100 sm:w-87.5 sm:h-120 rounded-4xl glass-panel border border-white/10 p-4 cursor-none shadow-2xl"
+            className="relative w-75 h-100 sm:w-87.5 sm:h-120 rounded-4xl glass-panel border border-accent-copper/25 p-4 cursor-none shadow-2xl"
           >
             {/* Ambient Shadow behind card */}
-            <div className="absolute inset-0 bg-accent-purple/20 blur-[100px] -z-10 rounded-full mix-blend-screen pointer-events-none" style={{ transform: "translateZ(-50px)" }} />
+            <div className="absolute inset-0 bg-accent-copper/20 blur-[100px] -z-10 rounded-full mix-blend-screen pointer-events-none" style={{ transform: "translateZ(-50px)" }} />
 
             {/* Inner Image translated forward for 3D depth */}
             <div 
-              className="w-full h-full rounded-3xl overflow-hidden relative border border-white/10"
+              className="w-full h-full rounded-3xl overflow-hidden relative border border-accent-copper/25"
               style={{ transform: "translateZ(60px)" }}
             >
               <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent z-10 pointer-events-none opacity-80" />
@@ -284,7 +284,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-secondary-text"
       >
         <span className="text-[10px] uppercase tracking-[0.3em] font-mono">Scroll to explore</span>
         <motion.div

@@ -53,19 +53,19 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-4xl bg-white/2 border border-white/10 rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.8)]"
+            className="relative w-full max-w-4xl bg-white/2 border border-accent-copper/25 rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.8)]"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 border border-white/10 text-white hover:bg-white hover:text-black transition-colors cursor-hover-target"
+              className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 border border-accent-copper/25 text-white hover:bg-white hover:text-black transition-colors cursor-hover-target"
             >
               <RiCloseLine size={24} />
             </button>
 
             <div className="flex flex-col md:flex-row h-full max-h-[85vh] overflow-y-auto custom-scrollbar">
               {/* Image/Visual Side */}
-              <div className="w-full md:w-1/2 min-h-75 md:min-h-full bg-[#07060A] relative flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-r border-white/5">
+              <div className="w-full md:w-1/2 min-h-75 md:min-h-full bg-[#07060A] relative flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-r border-accent-copper/20">
                 <div className="absolute inset-0 bg-linear-to-br from-[#BB8ECD]/20 to-transparent" />
                 {/* Fallback pattern for project image */}
                 <div className="w-full h-full opacity-30" style={{ backgroundImage: 'radial-gradient(circle at center, #DDC6E6 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
@@ -77,7 +77,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                 <div>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.categories.map((cat) => (
-                      <span key={cat} className="text-[10px] font-mono bg-white/5 border border-white/10 rounded px-2 py-1 text-neutral-300">
+                      <span key={cat} className="text-[10px] font-mono bg-white/5 border border-accent-copper/25 rounded px-2 py-1 text-neutral-300">
                         {cat}
                       </span>
                     ))}
@@ -100,7 +100,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                     <h4 className="text-xs uppercase tracking-widest text-neutral-500 mb-4 font-semibold">Technologies</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="text-xs font-mono text-neutral-300 bg-white/5 border border-white/5 rounded px-3 py-1.5">
+                        <span key={tech} className="text-xs font-mono text-neutral-300 bg-white/5 border border-accent-copper/20 rounded px-3 py-1.5">
                           {tech}
                         </span>
                       ))}
@@ -109,7 +109,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center gap-4 pt-6 border-t border-white/5">
+                <div className="flex items-center gap-4 pt-6 border-t border-accent-copper/20">
                   {project.demoUrl && (
                     <a
                       href={project.demoUrl}
@@ -126,7 +126,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white hover:text-black transition-colors cursor-hover-target"
+                      className="flex items-center justify-center w-14 h-14 bg-white/5 border border-accent-copper/25 text-white rounded-xl hover:bg-white hover:text-black transition-colors cursor-hover-target"
                     >
                       <RiGithubFill size={22} />
                     </a>

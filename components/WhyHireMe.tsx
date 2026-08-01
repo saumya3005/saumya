@@ -80,7 +80,7 @@ function BentoCard({ item, index }: { item: typeof HIRE_REASONS[0], index: numbe
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7, delay: index * 0.1, type: "spring", stiffness: 100 }}
-      className={`group relative h-full rounded-4xl glass-panel border border-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:${item.shadow} hover:shadow-2xl`}
+      className={`group relative h-full rounded-4xl glass-panel border border-accent-copper/20 overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:${item.shadow} hover:shadow-2xl`}
     >
       {/* Spotlight Follower */}
       <motion.div 
@@ -98,7 +98,7 @@ function BentoCard({ item, index }: { item: typeof HIRE_REASONS[0], index: numbe
       
       <div className="relative z-10 p-8 flex flex-col h-full justify-between">
         <div className="flex justify-between items-start mb-12">
-          <div className={`w-16 h-16 rounded-2xl glass-panel border border-white/10 flex items-center justify-center ${item.iconColor} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-inner`}>
+          <div className={`w-16 h-16 rounded-2xl glass-panel border border-accent-copper/25 flex items-center justify-center ${item.iconColor} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-inner`}>
             {item.icon}
           </div>
           <span className="text-[10px] uppercase font-mono tracking-widest text-zinc-600 group-hover:text-white/50 transition-colors">
@@ -110,7 +110,7 @@ function BentoCard({ item, index }: { item: typeof HIRE_REASONS[0], index: numbe
           <h3 className="text-2xl font-bold text-zinc-100 mb-3 group-hover:text-white transition-colors">
             {item.title}
           </h3>
-          <p className="text-sm font-medium text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors">
+          <p className="text-sm font-medium text-secondary-text leading-relaxed group-hover:text-ivory transition-colors">
             {item.description}
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function WhyHireMe() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="about" className="py-24 sm:py-32 relative z-10 border-t border-white/5 bg-zinc-950 overflow-hidden">
+    <section id="about" className="py-24 sm:py-32 relative z-10 border-t border-accent-copper/20 bg-luxury-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={containerRef}>
         
         <div className="mb-24 flex flex-col items-center text-center">
@@ -131,7 +131,7 @@ export default function WhyHireMe() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono tracking-[0.3em] uppercase text-zinc-500 mb-6"
+            className="text-xs font-mono tracking-[0.3em] uppercase text-secondary-text mb-6"
           >
             01 // Value Proposition
           </motion.span>
@@ -142,14 +142,14 @@ export default function WhyHireMe() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter"
           >
-            Why Hire <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-purple to-accent-blue">Me.</span>
+            Why Hire <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-copper to-accent-bronze">Me.</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="w-24 h-1 bg-linear-to-r from-accent-purple to-accent-cyan mt-10 rounded-full"
+            className="w-24 h-1 bg-linear-to-r from-accent-copper to-accent-bronze mt-10 rounded-full"
           />
         </div>
 

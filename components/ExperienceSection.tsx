@@ -18,8 +18,8 @@ const EXPERIENCE_DATA = [
       "Collaborated in Agile team of 6+ engineers across 3 production releases."
     ],
     icon: <RiBriefcase4Line size={24} />,
-    colorClass: "text-accent-purple",
-    bgClass: "bg-accent-purple/10",
+    colorClass: "text-accent-copper",
+    bgClass: "bg-accent-copper/10",
   },
   {
     role: "Web Developer Intern",
@@ -34,8 +34,8 @@ const EXPERIENCE_DATA = [
       "Optimized lazy loading, code splitting, and caching."
     ],
     icon: <RiCodeBoxLine size={24} />,
-    colorClass: "text-accent-blue",
-    bgClass: "bg-accent-blue/10",
+    colorClass: "text-accent-bronze",
+    bgClass: "bg-accent-bronze/10",
   },
   {
     role: "Full Stack Development Intern",
@@ -50,8 +50,8 @@ const EXPERIENCE_DATA = [
       "Successfully completed all assigned development tasks."
     ],
     icon: <RiRocketLine size={24} />,
-    colorClass: "text-accent-cyan",
-    bgClass: "bg-accent-cyan/10",
+    colorClass: "text-accent-bronze",
+    bgClass: "bg-accent-bronze/10",
   },
   {
     role: "Freelance Full Stack Developer",
@@ -86,11 +86,11 @@ export default function ExperienceSection() {
   });
 
   return (
-    <section id="experience" className="py-24 sm:py-32 relative z-10 border-t border-white/5 overflow-hidden">
+    <section id="experience" className="py-24 sm:py-32 relative z-10 border-t border-accent-copper/20 overflow-hidden">
       
       {/* Background Decorators */}
-      <div className="absolute top-0 right-0 w-200 h-200 bg-accent-purple/5 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-150 h-150 bg-accent-cyan/5 blur-[100px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 right-0 w-200 h-200 bg-accent-copper/5 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-150 h-150 bg-accent-bronze/5 blur-[100px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3" />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10" ref={containerRef}>
         
@@ -99,7 +99,7 @@ export default function ExperienceSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-mono tracking-[0.2em] uppercase text-accent-blue"
+            className="text-sm font-mono tracking-[0.2em] uppercase text-accent-bronze"
           >
             04 // Timeline
           </motion.span>
@@ -110,7 +110,7 @@ export default function ExperienceSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mt-4"
           >
-            Professional <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-purple to-accent-cyan">Experience</span>
+            Professional <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-copper to-accent-bronze">Experience</span>
           </motion.h2>
         </div>
 
@@ -121,7 +121,7 @@ export default function ExperienceSection() {
           {/* Animated vertical line progress */}
           <motion.div 
             style={{ scaleY, originY: 0 }}
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-accent-purple via-accent-cyan to-accent-blue md:-translate-x-1/2 shadow-[0_0_15px_rgba(124,58,237,0.5)] z-10"
+            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-accent-copper via-accent-bronze to-accent-bronze md:-translate-x-1/2 shadow-[0_0_15px_rgba(184,115,51,0.5)] z-10"
           />
 
           <div className="space-y-16 md:space-y-24">
@@ -156,10 +156,10 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="absolute left-6 md:left-1/2 w-8 h-8 rounded-full glass-panel border-2 border-zinc-800 -translate-x-3.75 md:-translate-x-1/2 z-20 group-hover:border-accent-cyan transition-colors duration-500 shadow-xl flex items-center justify-center overflow-hidden" 
+        className="absolute left-6 md:left-1/2 w-8 h-8 rounded-full glass-panel border-2 border-zinc-800 -translate-x-3.75 md:-translate-x-1/2 z-20 group-hover:border-accent-bronze transition-colors duration-500 shadow-xl flex items-center justify-center overflow-hidden" 
       >
-        <div className="absolute inset-0 bg-accent-cyan/20 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
-        <div className="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-accent-cyan transition-colors duration-500 relative z-10" />
+        <div className="absolute inset-0 bg-accent-bronze/20 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
+        <div className="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-accent-bronze transition-colors duration-500 relative z-10" />
       </motion.div>
 
       {/* Empty Space for Grid Layout */}
@@ -169,7 +169,7 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
       <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${isEven ? 'md:pl-12 lg:pl-16' : 'md:pr-12 lg:pr-16'}`}>
         <div 
           onClick={() => setExpanded(!expanded)}
-          className={`p-6 sm:p-8 rounded-3xl glass-panel border border-white/5 transition-all duration-500 hover:border-white/10 hover:bg-zinc-900/60 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] cursor-pointer relative overflow-hidden`}
+          className={`p-6 sm:p-8 rounded-3xl glass-panel border border-accent-copper/20 transition-all duration-500 hover:border-accent-copper/25 hover:bg-[#121212]/60 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] cursor-pointer relative overflow-hidden`}
         >
           {/* Subtle Accent Glow */}
           <div className={`absolute top-0 right-0 w-32 h-32 ${exp.bgClass} rounded-full blur-[50px] pointer-events-none transition-opacity duration-500 ${expanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
@@ -178,7 +178,7 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
             <div className={`w-12 h-12 rounded-xl glass-panel flex items-center justify-center ${exp.colorClass} shadow-inner bg-black/20 group-hover:scale-110 transition-transform duration-500`}>
               {exp.icon}
             </div>
-            <span className="inline-block px-3 py-1 text-xs font-mono rounded-full bg-white/5 text-zinc-400 border border-white/5">
+            <span className="inline-block px-3 py-1 text-xs font-mono rounded-full bg-white/5 text-secondary-text border border-accent-copper/20">
               {exp.date}
             </span>
           </div>
@@ -191,7 +191,7 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
               {exp.company}
             </h4>
             
-            <p className="text-zinc-400 leading-relaxed font-light text-sm sm:text-base mb-6">
+            <p className="text-secondary-text leading-relaxed font-light text-sm sm:text-base mb-6">
               {exp.desc}
             </p>
 
@@ -203,19 +203,19 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden border-t border-white/10 pt-4 mt-2 space-y-4"
+                  className="overflow-hidden border-t border-accent-copper/25 pt-4 mt-2 space-y-4"
                 >
                   
                   <div>
-                    <h5 className="text-xs font-mono uppercase text-zinc-500 mb-2">Impact</h5>
-                    <p className="text-sm text-zinc-300 font-light">{exp.impact}</p>
+                    <h5 className="text-xs font-mono uppercase text-secondary-text mb-2">Impact</h5>
+                    <p className="text-sm text-ivory font-light">{exp.impact}</p>
                   </div>
 
                   <div>
-                    <h5 className="text-xs font-mono uppercase text-zinc-500 mb-2">Key Achievements</h5>
+                    <h5 className="text-xs font-mono uppercase text-secondary-text mb-2">Key Achievements</h5>
                     <ul className="space-y-2">
                       {exp.achievements.map((ach, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-zinc-300 font-light">
+                        <li key={i} className="flex items-start gap-2 text-sm text-ivory font-light">
                           <RiArrowRightSLine className={`${exp.colorClass} mt-0.5 shrink-0`} />
                           <span>{ach}</span>
                         </li>
@@ -224,10 +224,10 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
                   </div>
 
                   <div>
-                    <h5 className="text-xs font-mono uppercase text-zinc-500 mb-2 mt-4">Tech Stack</h5>
+                    <h5 className="text-xs font-mono uppercase text-secondary-text mb-2 mt-4">Tech Stack</h5>
                     <div className="flex flex-wrap gap-2">
                       {exp.techStack.map((tech, i) => (
-                        <span key={i} className="px-2.5 py-1 text-xs font-mono rounded-md bg-black/40 border border-white/5 text-zinc-400">
+                        <span key={i} className="px-2.5 py-1 text-xs font-mono rounded-md bg-black/40 border border-accent-copper/20 text-secondary-text">
                           {tech}
                         </span>
                       ))}
@@ -239,8 +239,8 @@ function ExperienceCard({ exp, index, isEven }: { exp: typeof EXPERIENCE_DATA[0]
             </AnimatePresence>
 
             {/* Expand indicator */}
-            <div className="mt-4 flex items-center justify-center border-t border-white/5 pt-4">
-              <span className="text-[10px] uppercase font-mono tracking-widest text-zinc-600 group-hover:text-zinc-400 transition-colors flex items-center gap-2">
+            <div className="mt-4 flex items-center justify-center border-t border-accent-copper/20 pt-4">
+              <span className="text-[10px] uppercase font-mono tracking-widest text-zinc-600 group-hover:text-secondary-text transition-colors flex items-center gap-2">
                 {expanded ? 'Collapse Details' : 'Expand Details'}
               </span>
             </div>

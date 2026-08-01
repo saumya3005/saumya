@@ -99,7 +99,7 @@ export default function AiAssistantPanel() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-90 w-14 h-14 rounded-full bg-linear-to-br from-accent-purple to-accent-blue flex items-center justify-center text-white shadow-2xl shadow-accent-purple/30 hover:shadow-accent-purple/50 transition-shadow cursor-none magnetic-target"
+        className="fixed bottom-8 right-8 z-90 w-14 h-14 rounded-full bg-linear-to-br from-accent-copper to-accent-bronze flex items-center justify-center text-white shadow-2xl shadow-accent-copper/30 hover:shadow-accent-copper/50 transition-shadow cursor-none magnetic-target"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0, opacity: 0 }}
@@ -127,20 +127,20 @@ export default function AiAssistantPanel() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-28 right-8 z-90 w-100 max-w-[calc(100vw-2rem)] h-130 rounded-3xl glass-panel border border-white/10 shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-28 right-8 z-90 w-100 max-w-[calc(100vw-2rem)] h-130 rounded-3xl glass-panel border border-accent-copper/25 shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="px-6 py-4 border-b border-white/10 flex items-center gap-3 bg-black/20">
-              <div className="w-10 h-10 rounded-full bg-linear-to-br from-accent-purple to-accent-cyan flex items-center justify-center">
+            <div className="px-6 py-4 border-b border-accent-copper/25 flex items-center gap-3 bg-black/20">
+              <div className="w-10 h-10 rounded-full bg-linear-to-br from-accent-copper to-accent-bronze flex items-center justify-center">
                 <RiSparklingLine size={20} className="text-white" />
               </div>
               <div>
                 <h3 className="text-sm font-bold text-white">Saumya's AI Assistant</h3>
-                <p className="text-xs text-zinc-400">Ask about skills, projects, or experience</p>
+                <p className="text-xs text-secondary-text">Ask about skills, projects, or experience</p>
               </div>
               <div className="ml-auto flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs text-zinc-500">Online</span>
+                <span className="text-xs text-secondary-text">Online</span>
               </div>
             </div>
 
@@ -157,8 +157,8 @@ export default function AiAssistantPanel() {
                   <div
                     className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
                       msg.role === 'user'
-                        ? 'bg-accent-purple/30 border border-accent-purple/30 text-white rounded-br-md'
-                        : 'bg-white/5 border border-white/10 text-zinc-300 rounded-bl-md'
+                        ? 'bg-accent-copper/30 border border-accent-copper/30 text-white rounded-br-md'
+                        : 'bg-white/5 border border-accent-copper/25 text-ivory rounded-bl-md'
                     }`}
                   >
                     {msg.content}
@@ -172,10 +172,10 @@ export default function AiAssistantPanel() {
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
                 >
-                  <div className="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl rounded-bl-md flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-accent-purple animate-bounce [animation-delay:0ms]" />
-                    <div className="w-2 h-2 rounded-full bg-accent-purple animate-bounce [animation-delay:150ms]" />
-                    <div className="w-2 h-2 rounded-full bg-accent-purple animate-bounce [animation-delay:300ms]" />
+                  <div className="bg-white/5 border border-accent-copper/25 px-4 py-3 rounded-2xl rounded-bl-md flex items-center gap-1">
+                    <div className="w-2 h-2 rounded-full bg-accent-copper animate-bounce [animation-delay:0ms]" />
+                    <div className="w-2 h-2 rounded-full bg-accent-copper animate-bounce [animation-delay:150ms]" />
+                    <div className="w-2 h-2 rounded-full bg-accent-copper animate-bounce [animation-delay:300ms]" />
                   </div>
                 </motion.div>
               )}
@@ -184,8 +184,8 @@ export default function AiAssistantPanel() {
             </div>
 
             {/* Input */}
-            <div className="px-4 py-3 border-t border-white/10 bg-black/20">
-              <div className="flex items-center gap-2 bg-white/5 rounded-xl border border-white/10 px-4 py-2 focus-within:border-accent-purple/50 transition-colors">
+            <div className="px-4 py-3 border-t border-accent-copper/25 bg-black/20">
+              <div className="flex items-center gap-2 bg-white/5 rounded-xl border border-accent-copper/25 px-4 py-2 focus-within:border-accent-copper/50 transition-colors">
                 <input
                   ref={inputRef}
                   type="text"
@@ -198,7 +198,7 @@ export default function AiAssistantPanel() {
                 <button
                   onClick={handleSend}
                   disabled={!input.trim() || isTyping}
-                  className="p-2 rounded-lg bg-accent-purple/30 text-accent-purple hover:bg-accent-purple/50 disabled:opacity-30 transition-all cursor-none magnetic-target"
+                  className="p-2 rounded-lg bg-accent-copper/30 text-accent-copper hover:bg-accent-copper/50 disabled:opacity-30 transition-all cursor-none magnetic-target"
                 >
                   <RiSendPlaneLine size={16} />
                 </button>

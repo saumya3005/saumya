@@ -21,10 +21,10 @@ const PROJECTS = [
       "Text-to-Sign 3D avatar",
       "TensorFlow CNN + MediaPipe"
     ],
-    color: "accent-purple",
-    bgClass: "bg-accent-purple/10",
-    textClass: "text-accent-purple",
-    borderClass: "border-accent-purple/50",
+    color: "accent-copper",
+    bgClass: "bg-accent-copper/10",
+    textClass: "text-accent-copper",
+    borderClass: "border-accent-copper/50",
   },
   {
     title: "Vynk",
@@ -42,10 +42,10 @@ const PROJECTS = [
       "Instant real-time notifications",
       "Optimized MongoDB CRUD"
     ],
-    color: "accent-blue",
-    bgClass: "bg-accent-blue/10",
-    textClass: "text-accent-blue",
-    borderClass: "border-accent-blue/50",
+    color: "accent-bronze",
+    bgClass: "bg-accent-bronze/10",
+    textClass: "text-accent-bronze",
+    borderClass: "border-accent-bronze/50",
   },
   {
     title: "FlowSync",
@@ -63,10 +63,10 @@ const PROJECTS = [
       "Secure JWT authentication",
       "Interactive dashboard"
     ],
-    color: "accent-cyan",
-    bgClass: "bg-accent-cyan/10",
-    textClass: "text-accent-cyan",
-    borderClass: "border-accent-cyan/50",
+    color: "accent-bronze",
+    bgClass: "bg-accent-bronze/10",
+    textClass: "text-accent-bronze",
+    borderClass: "border-accent-bronze/50",
   },
   {
     title: "Hanuman Pushpavarsha",
@@ -97,16 +97,16 @@ const MacBookMockup = ({ bgClass, borderClass }: { bgClass: string, borderClass:
       {/* Laptop Screen */}
       <div className={`relative w-full aspect-16/10 rounded-t-xl glass-panel border-4 ${borderClass} overflow-hidden shadow-2xl`}>
         {/* Browser Top Bar */}
-        <div className={`w-full h-6 ${bgClass} flex items-center px-3 gap-1.5 border-b border-white/10 backdrop-blur-md`}>
+        <div className={`w-full h-6 ${bgClass} flex items-center px-3 gap-1.5 border-b border-accent-copper/25 backdrop-blur-md`}>
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
           <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
         </div>
         
         {/* Mock Content */}
-        <div className="absolute inset-0 top-6 flex flex-col p-6 gap-4 bg-zinc-900/80 backdrop-blur-xl">
+        <div className="absolute inset-0 top-6 flex flex-col p-6 gap-4 bg-[#121212]/80 backdrop-blur-xl">
           <div className="w-3/4 h-8 bg-white/5 rounded-lg animate-pulse" />
-          <div className="w-full h-32 bg-white/5 rounded-lg border border-white/5" />
+          <div className="w-full h-32 bg-white/5 rounded-lg border border-accent-copper/20" />
           <div className="grid grid-cols-2 gap-4">
             <div className="h-16 bg-white/5 rounded-lg" />
             <div className="h-16 bg-white/5 rounded-lg" />
@@ -118,7 +118,7 @@ const MacBookMockup = ({ bgClass, borderClass }: { bgClass: string, borderClass:
       
       {/* Laptop Base */}
       <div className="relative w-[110%] translate-x-[-4.5%] h-4 bg-zinc-800 rounded-b-2xl border-t border-zinc-700 shadow-2xl flex justify-center">
-        <div className="w-32 h-1 bg-zinc-900 rounded-b-md" />
+        <div className="w-32 h-1 bg-[#121212] rounded-b-md" />
       </div>
     </div>
   );
@@ -129,7 +129,7 @@ export default function ProjectsSection() {
   const { scrollYProgress } = useScroll({ target: containerRef });
   
   return (
-    <section id="projects" ref={containerRef} className="relative w-full bg-zinc-950">
+    <section id="projects" ref={containerRef} className="relative w-full bg-luxury-bg">
       
       {/* Header stuck at top */}
       <div className="sticky top-0 z-20 w-full pt-32 pb-10 bg-linear-to-b from-zinc-950 via-zinc-950/80 to-transparent pointer-events-none">
@@ -138,7 +138,7 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 0.8, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-mono tracking-[0.2em] uppercase text-zinc-500"
+            className="text-sm font-mono tracking-[0.2em] uppercase text-secondary-text"
           >
             02 // Selected Works
           </motion.span>
@@ -149,7 +149,7 @@ export default function ProjectsSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold tracking-tighter mt-4"
           >
-            Featured <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-purple to-accent-cyan">Projects.</span>
+            Featured <span className="text-transparent bg-clip-text bg-linear-to-r from-accent-copper to-accent-bronze">Projects.</span>
           </motion.h2>
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function ProjectsSection() {
       <div className="relative z-10 w-full pb-32">
         {PROJECTS.map((project, i) => {
           return (
-            <div key={i} className="min-h-screen flex flex-col justify-center sticky top-0 bg-zinc-950" style={{ paddingTop: '80px', zIndex: i + 10 }}>
+            <div key={i} className="min-h-screen flex flex-col justify-center sticky top-0 bg-luxury-bg" style={{ paddingTop: '80px', zIndex: i + 10 }}>
               {/* Dynamic top shadow to blend overlapping sections */}
               {i > 0 && <div className="absolute top-0 inset-x-0 h-32 bg-linear-to-b from-black to-transparent pointer-events-none opacity-50" />}
               
@@ -172,22 +172,22 @@ export default function ProjectsSection() {
                     <h3 className="text-4xl md:text-5xl font-bold">{project.title}</h3>
                   </div>
 
-                  <p className="text-lg text-zinc-400 font-light leading-relaxed mb-8">
+                  <p className="text-lg text-secondary-text font-light leading-relaxed mb-8">
                     {project.desc}
                   </p>
 
                   <div className="grid grid-cols-3 gap-4 mb-8">
                     {project.metrics.map((metric, idx) => (
-                      <div key={idx} className={`p-4 rounded-2xl glass-panel border border-white/5 ${project.bgClass}`}>
+                      <div key={idx} className={`p-4 rounded-2xl glass-panel border border-accent-copper/20 ${project.bgClass}`}>
                         <div className={`text-2xl font-bold ${project.textClass} mb-1`}>{metric.value}</div>
-                        <div className="text-xs font-mono text-zinc-500 uppercase">{metric.label}</div>
+                        <div className="text-xs font-mono text-secondary-text uppercase">{metric.label}</div>
                       </div>
                     ))}
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-10">
                     {project.tech.map((tech, idx) => (
-                      <span key={idx} className="px-3 py-1 rounded-full text-xs font-mono border border-white/10 bg-white/5 text-zinc-300">
+                      <span key={idx} className="px-3 py-1 rounded-full text-xs font-mono border border-accent-copper/25 bg-white/5 text-ivory">
                         {tech}
                       </span>
                     ))}
@@ -198,7 +198,7 @@ export default function ProjectsSection() {
                       Live Demo <RiExternalLinkLine className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </a>
                     
-                    <a href={project.github} className="magnetic-target group relative inline-flex items-center gap-2 px-8 py-4 rounded-full glass-panel border border-white/10 text-zinc-300 font-medium transition-all hover:text-white hover:border-white/30 hover:scale-105">
+                    <a href={project.github} className="magnetic-target group relative inline-flex items-center gap-2 px-8 py-4 rounded-full glass-panel border border-accent-copper/25 text-ivory font-medium transition-all hover:text-white hover:border-white/30 hover:scale-105">
                       <RiGithubLine size={20} />
                       Source Code
                     </a>

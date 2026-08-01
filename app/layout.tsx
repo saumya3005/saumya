@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-zinc-950 text-white selection:bg-yellow-500/30 selection:text-white">
+      <body className="min-h-full flex flex-col bg-luxury-bg text-white selection:bg-yellow-500/30 selection:text-white">
         <BackgroundCanvas />
         <CursorFollower />
         <CommandMenu />

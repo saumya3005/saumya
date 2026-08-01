@@ -26,7 +26,7 @@ function AnimatedSpheres() {
       <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
         <Sphere ref={sphereRef1} args={[1, 64, 64]} position={[-4, 2, -5]}>
           <MeshDistortMaterial
-            color="#7c3aed" // purple
+            color="#B87333" // copper
             attach="material"
             distort={0.4}
             speed={2}
@@ -40,7 +40,7 @@ function AnimatedSpheres() {
       <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
         <Sphere ref={sphereRef2} args={[1.2, 64, 64]} position={[4, -2, -6]}>
           <MeshDistortMaterial
-            color="#06b6d4" // cyan
+            color="#8C6239" // bronze
             attach="material"
             distort={0.5}
             speed={1.5}
@@ -67,7 +67,7 @@ function ConnectionLines() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5;
 
-      const color = new THREE.Color(Math.random() > 0.5 ? '#7c3aed' : '#06b6d4');
+      const color = new THREE.Color(Math.random() > 0.5 ? '#B87333' : '#8C6239');
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
@@ -98,10 +98,10 @@ function ConnectionLines() {
 
 export default function BackgroundCanvas() {
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden bg-zinc-950">
-      {/* CSS Blur Overlays for Aurora Effect */}
-      <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-accent-purple/10 blur-[120px] rounded-full mix-blend-screen opacity-50 animate-pulse" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-accent-blue/10 blur-[120px] rounded-full mix-blend-screen opacity-50 animate-pulse" style={{ animationDuration: '10s' }} />
+    <div className="fixed inset-0 z-[-1] bg-luxury-bg">
+      {/* Soft Ambient Glow Overlay - Luxury Theme */}
+      <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-accent-copper/5 blur-[120px] rounded-full mix-blend-screen opacity-50 animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-accent-bronze/5 blur-[150px] rounded-full mix-blend-screen opacity-40 animate-pulse" style={{ animationDuration: '10s' }} />
 
       {/* WebGL Canvas */}
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
